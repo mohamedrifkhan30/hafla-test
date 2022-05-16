@@ -1,24 +1,16 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Cal from './components/UI/Cal';
+import Display from './components/UI/Display';
 
+const numberVal =[0,1,2,3,4,5,6,7,8,9];
 function App() {
+  const [numpads, setNumpads] = useState(numberVal);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+    <Display/>
+        <Cal numpads={numpads}/>
+        </div>
   );
 }
 
